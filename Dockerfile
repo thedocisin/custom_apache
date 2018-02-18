@@ -1,4 +1,6 @@
 FROM ubuntu:latest
+RUN groupmod -g 82 www-data \
+&& usermod -u 82 www-data
 RUN apt update \
 && apt-get install -y libnghttp2-dev libpcre3-dev libexpat1-dev libssl-dev zlib1g-dev wget build-essential libmysqlclient20 libcurl4-openssl-dev libcurl3 libxml2-dev libxml2 libexpat1 libnghttp2-14 \
 && rm -rf /var/lib/apt/lists/*
